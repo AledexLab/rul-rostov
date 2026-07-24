@@ -15,6 +15,8 @@
 
 html {
   scroll-behavior: smooth;
+  background: #020202;
+  overscroll-behavior: none;
 }
 
 body {
@@ -196,8 +198,10 @@ h2 {
   display: inline-block;
   margin-top: 1.2rem;
   padding: 0.9rem 1.25rem;
-  background: var(--accent);
-  color: #111;
+  /* background: var(--accent); */
+  color: #cacaca;
+  border: 2px dotted var(--accent);
+  backdrop-filter: blur(10px);
   text-decoration: none;
   border-radius: 999px;
   font-weight: 700;
@@ -209,6 +213,7 @@ h2 {
 .button:hover {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 10px 25px rgba(229, 57, 53, 0.24);
+  border: 2px solid var(--accent);
 }
 
 .hero-card {
