@@ -90,6 +90,10 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 0;
+  -webkit-user-select: none; /* Chrome, Safari, Edge (старые версии) */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none; /* стандартное свойство */
 }
 
 .brand {
@@ -310,9 +314,9 @@ h2 {
 }
 
 .contact-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.02);
+  /* border: 1px solid var(--border); */
+  border-radius: 10px;
   padding: 1.3rem;
 }
 
@@ -412,6 +416,10 @@ h2 {
   border-top: 1px solid var(--border);
   padding: 1rem 0 2rem;
   color: var(--muted);
+  -webkit-user-select: none; /* Chrome, Safari, Edge (старые версии) */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none; /* стандартное свойство */
 }
 
 .footer-inner {
@@ -419,6 +427,46 @@ h2 {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-inner > span {
+  text-align: center;
+}
+
+.social-links > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border-radius: 50%;
+  /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); */
+  padding: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.social-links > a > svg {
+  transition: fill 0.2s ease-in-out;
+}
+
+.social-links > a:hover > svg {
+  fill: white;
+}
+
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; /* курсор при наведении, если нужен именно "ссылочный" вид */
 }
 
 @media (max-width: 900px) {
