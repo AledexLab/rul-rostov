@@ -323,8 +323,34 @@ h2 {
 .card p,
 .work-card p,
 .contact-card p,
+.example-card p,
 .contact-list {
   color: var(--muted);
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.example-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  /* padding: 0.5rem; */
+  /* border: white 2px solid; */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.example-card h3,
+.example-card p {
+  margin: 0;
+}
+
+.example-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .works-grid {
@@ -444,7 +470,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: rgba(255, 255, 255, 0s);
   border-radius: 50%;
   /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); */
   padding: 0;
@@ -467,13 +493,15 @@ a:active {
   text-decoration: none;
   color: inherit;
   cursor: pointer; /* курсор при наведении, если нужен именно "ссылочный" вид */
+  background-color: rgba(255, 255, 255, 0s);
 }
 
 @media (max-width: 900px) {
   .hero-content,
   .contact-card,
   .cards-grid,
-  .works-grid {
+  .works-grid,
+  .examples-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -481,7 +509,7 @@ a:active {
 @media (max-width: 680px) {
   .nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.8rem;
   }
 
@@ -493,8 +521,35 @@ a:active {
   .hero-content,
   .contact-card,
   .cards-grid,
-  .works-grid {
+  .works-grid,
+  .examples-grid {
     grid-template-columns: 1fr;
+  }
+
+  .works-grid {
+    padding: 1rem;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-copy h1 {
+    text-align: center;
+  }
+
+  .lead {
+    text-align: center;
+  }
+
+  .hero-card {
+    padding-top: 3rem;
+  }
+
+  .hero-card div {
+    text-align: center;
   }
 
   .section {
